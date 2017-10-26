@@ -6,7 +6,12 @@ import re
 directory = r'C:\Users\Kyle\Desktop\pythonProjects\ClassicalGuitarEmulator\csvFiles\\'
 rep = {"Note_on_c": "c", "Note_off_c": "f",
        " ": "", "Control_c": "cc",
-       "Program_c": "p", "Pitch_bend_c": "p"}
+       "Program_c": "p", "Pitch_bend_c": "pb"}
+
+# use this to convert back!
+# rep = {",c": ", Note_on_c", ",f": ", Note_off_c",
+#        ",": ", ", ",cc": ", Control_c",
+#        ",p": ", Program_c", ",pb": ", Pitch_bend_c"}
 
 for file in os.listdir(directory):
     with open(directory + file, 'r') as f:
