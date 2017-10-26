@@ -1,6 +1,10 @@
 # MusicMaker
 Classical Guitar AI
 
+midi files are from 'http://www.classicalguitarmidi.com/'
+
+I first scraped all of them using the MidiFileScraper.py
+
 I used http://www.fourmilab.ch/webtools/midicsv/ to convert my midi files to txt
 
 To do this, I added the two .exe files to my folder with midi files. I then ran the following
