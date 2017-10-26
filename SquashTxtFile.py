@@ -5,8 +5,8 @@ import re
 
 directory = r'C:\Users\Kyle\Desktop\pythonProjects\ClassicalGuitarEmulator\csvFiles\\'
 rep = {"Note_on_c": "c", "Note_off_c": "f",
-       " ": "", "Control_c": "cc", "Program_c": "p",
-       "Pitch_bend_c": "p"}
+       " ": "", "Control_c": "cc",
+       "Program_c": "p", "Pitch_bend_c": "p"}
 
 for file in os.listdir(directory):
     with open(directory + file, 'r') as f:
