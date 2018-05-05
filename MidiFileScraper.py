@@ -20,6 +20,6 @@ for link in midiLinks:
     fileName = str(i) + '.midi'
     response = requests.get(link)
     if response.status_code == 200:
-        with open(r'\Users\Kyle\Desktop\pythonProjects\ClassicalGuitarEmulator\midiFiles\\' + fileName, 'wb') as f:
+        with open(r'' + fileName, 'wb') as f:
             f.write(response.content)
     i += 1
