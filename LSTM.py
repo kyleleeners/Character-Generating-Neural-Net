@@ -14,6 +14,11 @@ def load_data(filename):
         return f.read()
 
 
+def output_result(result):
+    with open(os.path.join('..', 'out', filename), 'w') as f:
+        f.write(result)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-tr', '--training', required=True)
@@ -79,4 +84,4 @@ if __name__ == '__main__':
         seq_in = [ix_to_char[value] for value in pattern]
         pattern.append(index)
         pattern = pattern[1:len(pattern)]
-    print(result)
+    output_result(result)

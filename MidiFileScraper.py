@@ -1,4 +1,5 @@
 import lxml.html
+import os
 import requests
 
 alphabetInterval = ['a-b', 'c-f', 'g-l', 'm-o', 'p-r', 's-z']
@@ -20,6 +21,6 @@ for link in midiLinks:
     fileName = str(i) + '.midi'
     response = requests.get(link)
     if response.status_code == 200:
-        with open(r'' + fileName, 'wb') as f:
+        with open(os.path.join('..', 'data', fileName), 'wb') as f:
             f.write(response.content)
     i += 1

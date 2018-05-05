@@ -3,7 +3,7 @@
 import os.path
 import re
 
-directory = r''
+directory = os.path.join('..', 'data')
 rep = {"Note_on_c": "c", "Note_off_c": "f", " ": "", "Control_c": "cc", "Program_c": "p", "Pitch_bend_c": "pb"}
 rep = dict((re.escape(k), v) for k, v in rep.items())
 pattern = re.compile("|".join(rep.keys()))
@@ -22,5 +22,6 @@ for file in os.listdir(directory):
     newLine = pattern.sub(lambda m: rep[re.escape(m.group(0))], newLine)
 
     with open(directory + file, "w") as f:
+
         for line in newLine:
             f.writelines(line)
