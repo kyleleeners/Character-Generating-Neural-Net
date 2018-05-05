@@ -3,7 +3,7 @@
 import os.path
 import re
 
-directory = r'C:\Users\Kyle\Desktop\pythonProjects\ClassicalGuitarEmulator\csvFiles\\'
+directory = r''
 rep = {"Note_on_c": "c", "Note_off_c": "f", " ": "", "Control_c": "cc", "Program_c": "p", "Pitch_bend_c": "pb"}
 rep = dict((re.escape(k), v) for k, v in rep.items())
 pattern = re.compile("|".join(rep.keys()))
