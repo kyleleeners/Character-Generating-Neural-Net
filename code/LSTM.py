@@ -9,20 +9,20 @@ from keras.utils import np_utils
 
 data_directory = os.path.join('..', 'data')
 
-
 def load_data():
     for file in os.listdir(data_directory):
         with open(os.path.join(data_directory, file), 'r') as f:
-            return f.read()
+            return f.read(), file
 
 
 def output_result(result):
-    with open(os.path.join('..', 'out', filename), 'w') as f:
+    with open(os.path.join('..', 'out', f_name), 'w') as f:
         f.write(result)
 
 
 # setup data
-training_data = load_data().lower()
+training_data, f_name = load_data()
+training_data.lower()
 chars = list(set(training_data))
 data_size, alphabet_size = len(training_data), len(chars)
 print('%d characters, %d unique' % (data_size, alphabet_size))
