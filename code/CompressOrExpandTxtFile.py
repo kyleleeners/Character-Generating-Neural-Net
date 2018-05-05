@@ -15,13 +15,12 @@ pattern = re.compile("|".join(rep.keys()))
 
 for file in os.listdir(directory):
     newLine = ""
-    with open(directory + file, 'r') as f:
+    with open(os.path.join(directory, file), 'r') as f:
         for word in f.readlines():
             newLine += word
 
     newLine = pattern.sub(lambda m: rep[re.escape(m.group(0))], newLine)
 
-    with open(directory + file, "w") as f:
-
+    with open(os.path.join(directory, file), "w") as f:
         for line in newLine:
             f.writelines(line)

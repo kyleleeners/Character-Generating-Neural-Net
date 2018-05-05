@@ -8,10 +8,13 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
+data_directory = os.path.join('..', 'data')
 
-def load_data(filename):
-    with open(os.path.join('..', 'data', filename), 'r') as f:
-        return f.read()
+
+def load_data():
+    for file in os.listdir(data_directory):
+        with open(os.path.join(data_directory, file), 'r') as f:
+            return f.read()
 
 
 def output_result(result):
@@ -21,13 +24,10 @@ def output_result(result):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-tr', '--training', required=True)
-
     io_args = parser.parse_args()
-    training = io_args.training
 
     # setup data
-    training_data = load_data(training).lower()
+    training_data = load_data().lower()
     chars = list(set(training_data))
     data_size, alphabet_size = len(training_data), len(chars)
     print('%d characters, %d unique' % (data_size, alphabet_size))
