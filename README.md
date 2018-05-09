@@ -1,6 +1,8 @@
 # MusicMaker
 Classical Guitar AI
 
+If you try to run this without a GPU you're gonna have a real bad time
+
 midi files are from 'http://www.classicalguitarmidi.com/'
 
 I used http://www.fourmilab.ch/webtools/midicsv/ to convert my midi files to txt
@@ -13,3 +15,4 @@ random sampling (thats why there is a loop). The 65% included 1-hot-encoding of 
 predictions.
 
 Todo: Either fix midi file input formatting or figure out a different file type. Maybe sheet music? IDK I know nothing about music
+
