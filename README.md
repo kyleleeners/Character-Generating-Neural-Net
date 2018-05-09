@@ -7,11 +7,9 @@ I used http://www.fourmilab.ch/webtools/midicsv/ to convert my midi files to txt
 
 "for %x in (*.midi) do midicsv %x /destination/path/%~nx.txt" to convert all midis to csv
 
-Example output in out folder
+Example's output in out folder. The midi file looks good but since formatting is really important it doesnt quite work
+I also trained it on the first harry potter book. The 50% acc example was trained without much optimization and without
+random sampling (thats why there is a loop). The 65% included 1-hot-encoding of input sequences, and random draws to of
+predictions.
 
-Edit: I have around 3000 midi files which is huge characters. My gpu cant handle this (and I have a good GPU).
-    I trained on about 1/3 of the total files and hit ~70% accuracy. Definitely gets the basic format down, has trouble
-    with the header / footer and ordering. I think this has more to do with my lack of knowledge on how to properly
-    format midi files, rather then the model.
-
-Todo: run on non-midi input (some random text file) and include as output example
+Todo: Either fix midi file input formatting or figure out a different file type. Maybe sheet music? IDK I know nothing about music
