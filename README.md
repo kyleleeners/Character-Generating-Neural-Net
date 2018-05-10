@@ -16,4 +16,9 @@ I also trained it on the first harry potter book. The 50% acc example was traine
 random sampling (thats why there is a loop). The 65% included 1-hot-encoding of input sequences, and random draws from 
 a distribution of predictions.
 
+I'm pretty confident that if I add another layer or two to the net, the output would have looked very good. The 65% acc 
+example took around 5hrs to run on my 1080 gpu. I figure more layers would increase that time exponentially. Could buy 
+some AWS power to check faster but meh. 
 
+TODO: Reformat so that the input is a sequence of words rather than a sequence of characters. This would stop all the
+nonsense words from poppin up but I'm afraid it would also kill the variety.
