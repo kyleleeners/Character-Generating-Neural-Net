@@ -42,7 +42,6 @@ for i in range(0, data_size - seq_length, 1):
 n_patterns = len(raw_X)
 X = np.reshape(raw_X, (n_patterns, seq_length, 1))
 X = np_utils.to_categorical(X)
-# X = X / float(alphabet_size)
 y = np_utils.to_categorical(raw_y)
 
 # setup model
@@ -74,7 +73,6 @@ pattern = X[start]
 result = ''
 for i in range(1000):
     x = np.reshape(pattern, (1, len(pattern), len(pattern[1])))
-    # x = x / float(alphabet_size)
     prediction = model.predict_proba(x, verbose=0)[0,:]
     rnd_idx = np.random.choice(len(prediction), p=prediction)
     result += ix_to_char[rnd_idx]
