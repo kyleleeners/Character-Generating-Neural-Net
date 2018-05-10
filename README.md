@@ -1,4 +1,4 @@
-# Character Generator Neural Net
+# Character Generating Neural Net
 Input text, output stuff that kinda looks like input
 
 If you try to run this without a GPU you're gonna have a real bad time
